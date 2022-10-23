@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_GeneralRegistrationForm>
+@{ 
+    int no = 0;
+}
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>General Registration</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------Table------------------------------>
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div  class="row">
+<div class="col-md-12">
+    <div class="white_shd full margin_bottom_30">
+        <div class="full graph_head">
+            <div class="heading1 margin_0">
+                <h2>Regestration</h2>
+            </div>
+        </div>
+        <div class="table_section padding_infor_info">
+            <div class="table-responsive-sm">
+                <table class="table table-active table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr#</th>
+                            <th>ID</th>
+                            <th>FIRST NAME</th>
+                            <th>LAST NAME</th>
+                            <th>CONTACT</th>
+                            <th>EMAIL</th>
+                            <th>PROFESSION</th>
+                            <th>GENDER</th>
+                            <th>COUNTRY</th>
+                            <th>CITY</th>
+                            <th>ADDRESS</th>
+                            <th>MESSAGE</th>
+                            <th>DATE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var g in Model)
+                        {
+                            no++;
+                        <tr>
+                            <td>@no</td>
+                            <td>@g.GENERAL_ID</td>
+                            <td>@g.FIRST_NAME</td>
+                            <td>@g.LAST_NAME</td>
+                            <td>@g.CONTACT</td>
+                            <td>@g.EMAIL</td>
+                            <td>@g.PROFESSION</td>
+                            <td>@g.GENDER</td>
+                            <td>@g.COUNTRY</td>
+                            <td>@g.CITY</td>
+                            <td>@g.ADDRESS</td>
+                            <td>@g.MESSAGE</td>
+                            <td>@DateTime.Parse(g.DATE.ToString()).ToLongDateString()</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>

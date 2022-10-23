@@ -1,0 +1,174 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_FAQs>
+ @using DarulAman.Models;
+@{
+    Model1 db = new Model1();
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+<head>
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .faq-heading {
+            border-bottom: #777;
+            padding: 25px 60px 10px;
+            margin-left: 15%;
+            font-size: x-large;
+            font-weight: 600;
+        }
+
+        .faq-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .hr-line {
+            width: 60%;
+            margin: auto;
+        }
+        /* Style the buttons that are used to open and close the faq-page body */
+        .faq-page {
+            /* background-color: #eee; */
+            color: #444;
+            cursor: pointer;
+            padding: 25px 20px;
+            width: 60%;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            margin: auto;
+            font-size: large;
+        }
+
+        .faq-body {
+            margin: auto;
+            /* text-align: center; */
+            width: 50%;
+            padding: auto;
+        }
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        .active2,
+        .faq-page:hover {
+            background-color: #F9F9F9;
+        }
+        /* Style the faq-page panel. Note: hidden by default */
+        .faq-body {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+        }
+
+        .faq-page:after {
+            content: '\02795';
+            /* Unicode character for "plus" sign (+) */
+            font-size: 13px;
+            color: #777;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active2:after {
+            content: "\2796";
+            /* Unicode character for "minus" sign (-) */
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Header Start -->
+    <div class="page-header-contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                <div class="col-12">
+                    <a href="@Url.Action("IndexCustomer","Home")">Home</a>
+                    <a href="@Url.Action("FAQs","Home")">FAQs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+    <main>
+
+        <h1 class="faq-heading">Events Based</h1>
+        @if (Model.Count() > 0)
+        {
+            <section class="faq-container">
+
+                @foreach (var f in Model)
+                {
+                    <div class="faq-one">
+                        <!-- faq question -->
+                        <h1 class="faq-page">@f.FAQ_QUESTION</h1>
+                        <!-- faq answer -->
+                        <div class="faq-body">
+                            <p>
+                                @f.FAQ_ANSWER
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="hr-line">
+                }
+
+            </section>
+        }
+        else
+        {
+            
+                <h5 class="text-center"><b style="color:#FDBE33"> No Faqs Exist </b></h5>
+            
+        }
+        <br />
+
+        <h1 class="faq-heading">Other</h1>
+        <section class="faq-container">
+            <div class="faq-one">
+                <!-- faq question -->
+                <h1 class="faq-page">What is an FAQ Page?</h1>
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+                        necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+                        aperiam.
+                        Perspiciatis, porro!
+                    </p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-two">
+                <!-- faq question -->
+                <h1 class="faq-page">Why do you need an FAQ page?</h1>
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+                        necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+                        aperiam.
+                        Perspiciatis, porro!
+                    </p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-three">
+                <!-- faq question -->
+                <h1 class="faq-page">Does it improves the user experience of a website?</h1>
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+                        necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+                        aperiam.
+                        Perspiciatis, porro!
+                    </p>
+                </div>
+            </div>
+            <hr class="hr-line">
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>

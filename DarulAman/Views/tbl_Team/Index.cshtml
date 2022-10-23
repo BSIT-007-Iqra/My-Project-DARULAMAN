@@ -1,0 +1,156 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_Team>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Index</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <p class="heading">Teams</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+
+            <a style="float:right;" class="btn btn-outline-info btn-lg" href="@Url.Action("Create", "tbl_Team")"><b>Create New</b> </a>
+        </div>
+
+    </div>
+</div>
+<br />
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                        <div class="heading1 margin_0">
+
+                        </div>
+                    </div>
+                    <div class="table_section padding_infor_info">
+                        <div class="table-responsive-sm">
+                            <table class="table table-active table-bordered">
+                                <tr>
+                                    <th>
+                                       FIRST_NAME
+                                    </th>
+                                    <th>
+                                        LAST_NAME
+                                    </th>
+                                    <th>
+                                       PICTURE
+                                    </th>
+                                    <th>
+                                       GENDER
+                                    </th>
+                                    <th>
+                                       EMAIL
+                                    </th>
+                                    <th>
+                                      CONTACT
+                                    </th>
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        ORIGIN
+                                    </th>
+                                    <th>
+                                      ADDRESS
+                                    </th>
+                                    <th>
+                                        RESPONSIBILITIES
+                                    </th>
+                                    <th>
+                                      PROFESSION
+                                    </th>
+                                    <th>
+                                      DATE_OF_JOINING
+                                    </th>
+                                    <th>
+                                       LANGUAGES
+                                    </th>
+                                    <th style="width:50px"></th>
+                                </tr>
+
+                                @foreach (var item in Model)
+                                {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FIRST_NAME)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LAST_NAME)
+                                </td>
+                                <td>
+                                    <img width="100px" height="100px" src="@Url.Content(item.PICTURE)" />
+                                </td>
+                               
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GENDER)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EMAIL)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CONTACT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ORIGIN)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ADDRESS)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RESPONSIBILITIES)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PROFESSION)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DATE_OF_JOINING)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LANGUAGES)
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Edit", "tbl_Team", new { id=item.TEAM_ID })">
+                                        <i class="fa fa-edit btn btn-success  "></i>
+                                    </a>|
+                                    <a href="@Url.Action("Details", "tbl_Team", new { id=item.TEAM_ID })">
+                                        <i class="fa fa-book btn btn-warning"></i>
+                                    </a>|
+                                    <a href="@Url.Action("Delete", "tbl_Team", new { id=item.TEAM_ID  })">
+                                        <i class="fa fa-trash btn btn-danger"></i>
+                                    </a>
+
+                                </td>
+                               
+                            </tr>
+
+                                }
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

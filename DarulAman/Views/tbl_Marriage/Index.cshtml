@@ -1,0 +1,123 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_Marriage>
+
+@{
+    Layout = "~/Views/Shared/_MarriageLayout.cshtml";
+    int no = 0;
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Index</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!----------------Table-------------------------------------->
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                        <div class="heading1 margin_0">
+                            <h2>Marriage Regestration</h2>
+                        </div>
+                    </div>
+                    <div class="table_section padding_infor_info">
+                        <div class="table-responsive-sm">
+                            <table class="table table-active table-bordered">
+                                <tr>
+                                    <th>Sr#</th>
+                                    <th>
+                                        FIRST_NAME
+                                    </th>
+                                    <th>
+                                        LAST_NAME
+                                    </th>
+                                    <th>
+                                        CONTACT
+                                    </th>
+                                    <th>
+                                        EMAIL
+                                    </th>
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        DATE_OF_MARRIAGE
+                                    </th>
+                                    <th>
+                                        ORIGIN
+                                    </th>
+                                    <th>
+                                        MESSAGE
+                                    </th>
+                                    <th>
+                                       DATE
+                                    </th>
+                                    <th>
+                                       STATUS
+                                    </th>
+                                    <th></th>
+                                </tr>
+
+                                @foreach (var item in Model)
+                                {
+                                    no++;
+                            <tr>
+                                
+                                <td>@no</td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FIRST_NAME)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LAST_NAME)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CONTACT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EMAIL)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DATE_OF_MARRIAGE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ORIGIN)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MESSAGE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DATE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.STATUS)
+                                </td>
+                                <td>
+                                   <a href="@Url.Action("Edit", "tbl_Marriage", new { id=item.MARRIAGE_ID})">
+                                        <i class="fa fa-edit btn btn-success  "></i>
+                                   </a>|
+                                   <a href="@Url.Action("Details","tbl_Marriage", new { id=item.MARRIAGE_ID })">
+                                        <i class="fa fa-book btn btn-warning"></i>
+                                    </a>|
+
+                                </td>
+                            </tr>
+                                }
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

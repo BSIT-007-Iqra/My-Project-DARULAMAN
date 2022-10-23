@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_Contact>
+@{ 
+    int no = 0;
+}
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Contact</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------Table------------------------------>
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div  class="row">
+<div class="col-md-12">
+    <div class="white_shd full margin_bottom_30">
+        <div class="full graph_head">
+            <div class="heading1 margin_0">
+                <h2>Contact Form</h2>
+            </div>
+        </div>
+        <div class="table_section padding_infor_info">
+            <div class="table-responsive-sm">
+                <table class="table table-active table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr#</th>
+                            <th>ID</th>
+                            <th>FIRST NAME</th>
+                            <th>LAST NAME</th>
+                            <th>EMAIL</th>
+                            <th>User ID</th>
+                            <th>CONTACT</th>
+                            <th>MESSAGE</th>
+                            <th>DATE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var c in Model)
+                        {
+                            no++;
+                        <tr>
+                            <td>@no</td>
+                            <td>@c.CONTACT_ID</td>
+                            <td>@c.FIRST_NAME</td>
+                            <td>@c.LAST_NAME</td>
+                            <td>@c.EMAIL</td>
+                            <td>@c.ID</td>
+                            <td>@c.CONTACT</td>
+                            <td>@c.MESSAGE</td>
+                            <td>@DateTime.Parse(c.DATE.ToString()).ToLongDateString()</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>

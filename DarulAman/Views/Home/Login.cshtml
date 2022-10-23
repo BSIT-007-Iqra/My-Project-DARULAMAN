@@ -1,0 +1,84 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_AccessLevel>
+@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+@Html.Raw(ViewBag.Message)
+<!-- Page Header Start -->
+<div class="page-header-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Login</h2>
+            </div>
+            <div class="col-12">
+                <a href="@Url.Action("IndexCustomer","Home")">Home</a>
+                <a href="@Url.Action("Login","Home")">Admin Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+<center>
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                    {
+                        <div class="form2">
+                            <center>
+                                <h1 style="color: #FDBE33;"><b>Admin login</b></h1>
+                                <p>Please fill in this form to Login</p>
+                                <hr>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1" class="Form-word "><b>Email address *</b></label>
+                                        <input type="email" class="form-control form-input " id="exampleInputEmail1" name="EMAIL" placeholder="Enter Email" required autocomplete="off">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1" class="Form-word "><b>Password *</b></label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" name="PASSWORD" placeholder="Enter Password" required autocomplete="off">
+                                    </div>
+                                    
+                                    <div>@ViewBag.Message</div>
+                                    <br />
+                                    <input type="submit" class="btn btn-custom btn-lg" value="Log In" /><button type="button" class="btn btn-custom btn-lg" data-toggle="modal" data-target="#exampleModal">Forget Password</button>
+
+                                    <br /><br />
+                                </form>
+                            </center>
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+<!--------------------------Email---------------------->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="widget-title text-left text-warning" id="exampleModalLabel">Forget Password</h5>
+                <button type="button" class="close text-right text-dark" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="/Home/ForgetPassword" method="post" id="myform">
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Enter Email:</label>
+                        <input type="email" name="email" class="form-control" id="email">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-custom btn-lg">Close</button>
+                <button type="submit" class="btn btn-custom btn-lg" form="myform">Send Code</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

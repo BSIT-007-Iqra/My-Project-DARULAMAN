@@ -1,0 +1,94 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_Volunteer>
+
+@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+               <br /> <h3 style="color:#FDBE33">عَنِ ابْنِ عُمَرَ أَنَّ النَّبِيَّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ قَالَ أَحَبُّ النَّاسِ إِلَى اللَّهِ أَنْفَعُهُمْ لِلنَّاسِ</h3><br />
+                <h4 style="color:#FDBE33">
+                    Ibn Umar Reported:The Prophet(ﷺ) said;
+                </h4>
+                    <p style="color:white"> "The most beloved people to Allah are those who are most beneficial to people."<br />(Al-Mu'jam Al-Awsat 6/139)
+                </p>
+              
+            </div>
+            <div class="col-12">
+                <br /><br />  <h2>Volunteer</h2>
+                <a href="@Url.Action("IndexCustomer","Home")">Home</a>
+                <a href="@Url.Action("Volunteer","Home")">Volunteer</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Team End -->
+<!-- Volunteer Start -->
+<div class="container">
+    <div class="volunteer" data-parallax="scroll" data-image-src="img/volunteer.jpg">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="volunteer-form">
+                 
+                        <form action="/Home/SubmitVolunteer" method="post">
+                            <div class="control-group">
+                                <input type="text" class="form-control" name="FIRST_NAME" placeholder="First Name" required="required" />
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" name="LAST_NAME" placeholder="Last Name" required="required" />
+                            </div>
+                            <div class="control-group">
+                                <input type="email" class="form-control" name="EMAIL" placeholder="Email" required="required" />
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control" name="ID" placeholder="ID" required="required" />
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control" name="REASON" placeholder="Why you want to become a volunteer?" required="required"></textarea>
+                            </div>
+                            <div>
+                                <button class="btn btn-custom" type="submit">Become a volunteer</button>
+                            </div>
+                        </form>
+                    
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="volunteer-content">
+                    <div class="section-header">
+                        <p>Become A Volunteer</p>
+                        <h3 style="color:white"><b>Prophet Muhammad(ﷺ)advised us:</b></h3>
+                        <p> to take advantage of five before five:</p>
+                        <p><b>"Take advantage of five maters before five other matters"</b></p>
+                        <ol style="color:white">
+                            <li>Your youth,before you become old</li>
+                            <li>Your health,before you fall sick </li>
+                            <li>Your wealth,before you become poor</li>
+                            <li>Your free time,before you become busy</li>
+                            <li>And your life,before you death</li>
+                        </ol>
+                        <p>Allah has blessed each human being at least with one of the following: </p>
+                        <ul style="color:white">
+                            <li>Time</li>
+                            <li>Wealth</li>
+                            <li>Health</li>
+                        </ul>
+                    </div>
+                    <div class="volunteer-text">
+                        <p>
+                            If,I have all the above,then I must be more thankful to Allah amd try my best to utilize these in the way(s) described in Quran and Hadith.This is the only way I can be successful in this world and in the life after.
+                        </p>
+                        <p><u>Darul-Aman</u> is one of the biggest projects and needs people with their prayers(Dua),skills,money,time and mush more.</p>
+                   <p>Think out of the box and ask yourself<b>"how can I support and be part of this project?"</b></p>
+                        <p>If you support this project in a regular basis,then you are considered as the Member of Darul-Aman otherwise a Volunteer</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Volunteer End -->

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_Team>
+@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+<!-- Page Header Start -->
+<div class="page-header-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Team Member</h2>
+            </div>
+            <div class="col-12">
+                <a href="@Url.Action("IndexCustomer","Home")">Home</a>
+                <a href="@Url.Action("Team","Home")">Team</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Team Start -->
+<div class="team">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Meet Our Team</p>
+            <h2>Under Maintenance</h2>
+        </div>
+       
+        <div class="row">
+            @foreach (var te in Model)
+            {
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="@Url.Content(te.PICTURE)" />
+                    </div>
+                    <div class="team-text">
+                        <h2>@te.FIRST_NAME @te.LAST_NAME</h2>
+                        <p>@te.PROFESSION</p>
+                        <p1>@te.RESPONSIBILITIES</p1><br />
+                        <p1>@te.LANGUAGES</p1><br />
+                        <p1>@te.ORIGIN</p1>
+                       
+                       
+                    </div>
+                </div>
+            </div>
+            }
+         
+        
+           
+        </div>
+    </div>
+</div>
+<!-- Team End -->

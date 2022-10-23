@@ -1,0 +1,104 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_Admin>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Index</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <p class="heading">Admin</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+
+            <a style="float:right;" class="btn btn-outline-info btn-lg" href="@Url.Action("Create", "tbl_Admin")"><b>Create New</b> </a>
+        </div>
+
+    </div>
+</div>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+           ACCESSLEVEL
+        </th>
+        <th>
+           FIRST_NAME
+        </th>
+        <th>
+           LAST_NAME
+        </th>
+        <th>
+           EMAIL
+        </th>
+        <th>
+           CONTACT
+        </th>
+        <th>
+            PASSWORD
+        </th>
+        <th>
+            ADDRESS
+        </th>
+        <th>
+            STATUS
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.tbl_AccessLevel.NAME)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FIRST_NAME)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LAST_NAME)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EMAIL)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CONTACT)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PASSWORD)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ADDRESS)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.STATUS)
+    </td>
+    <td>
+        <a href="@Url.Action("Edit", "tbl_Admin", new { id=item.ADMIN_ID })">
+            <i class="fa fa-edit btn btn-success  "></i>
+        </a>|
+        <a href="@Url.Action("Details", "tbl_Admin", new { id=item.ADMIN_ID })">
+            <i class="fa fa-book btn btn-warning"></i>
+        </a>|
+        <a href="@Url.Action("Delete", "tbl_Admin", new { id=item.ADMIN_ID })">
+            <i class="fa fa-trash btn btn-danger"></i>
+        </a>
+    </td>
+    
+</tr>
+    }
+
+</table>

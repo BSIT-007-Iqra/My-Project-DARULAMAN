@@ -1,0 +1,106 @@
+﻿@model DarulAman.Models.tbl_DeadRelative
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_DeadRelative</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FIRST_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FIRST_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LAST_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LAST_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONTACT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONTACT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RELATION_WITH_DEAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RELATION_WITH_DEAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_OF_FUNERAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_OF_FUNERAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORIGIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORIGIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MESSAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MESSAGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONDITION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONDITION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FUNERAL_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

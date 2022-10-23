@@ -1,0 +1,87 @@
+﻿@model DarulAman.Models.tbl_Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Detail</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <p class="heading-center" align="center">Event</p>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            EVENT_NAME
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EVENT_NAME)
+        </dd>
+
+        <dt>
+            EVENT_DATE
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EVENT_DATE)
+        </dd>
+
+        <dt>
+            EVENT_DESCRIPTION
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EVENT_DESCRIPTION)
+        </dd>
+
+        <dt>
+            EVENT_PICTURE
+        </dt>
+
+        <dd>
+            <img width="100" height="100" src="@Url.Content(Model.EVENT_PICTURE)" />
+        </dd>
+
+        <dt>
+            TIME_TO
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIME_TO)
+        </dd>
+
+        <dt>
+            TIME_FROM
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIME_FROM)
+        </dd>
+
+        <dt>
+            ADDRESS
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADDRESS)
+        </dd>
+
+    </dl>
+</div>
+<p class="btn btn-outline-info btn-custom btn-lg">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EVENT_ID }) |
+</p>
+<br />
+<p class="btn btn-custom btn-outline-warning btn-lg">
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,91 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_FAQs>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Index</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <p class="heading">FAQs</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+
+            <a style="float:right;" class="btn btn-outline-info btn-lg" href="@Url.Action("Create", "tbl_FAQs")"><b>Create New</b> </a>
+        </div>
+
+    </div>
+</div>
+<br />
+
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                        <div class="heading1 margin_0">
+                           
+                        </div>
+                    </div>
+                    <div class="table_section padding_infor_info">
+                        <div class="table-responsive-sm">
+                            <table class="table table-active table-bordered">
+                                <tr>
+                                    <th>
+                                        FAQ_QUESTION
+                                    </th>
+                                    <th width="500px">
+                                        FAQ_ANSWER
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FAQ_QUESTION)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FAQ_ANSWER)
+                                        </td>
+
+                                        <td>
+                                            <a href="@Url.Action("Edit", "tbl_FAQs", new { id=item.FAQ_ID})">
+                                                <i class="fa fa-edit btn btn-success  "></i>
+                                            </a>|
+                                            <a href="@Url.Action("Details", "tbl_FAQs", new { id=item.FAQ_ID})">
+                                                <i class="fa fa-book btn btn-warning"></i>
+                                            </a>|
+                                            <a href="@Url.Action("Delete", "tbl_FAQs", new { id=item.FAQ_ID })">
+                                                <i class="fa fa-trash btn btn-danger"></i>
+                                            </a>
+
+                                        </td>
+
+                                    </tr>
+                                }
+
+                            </table>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>

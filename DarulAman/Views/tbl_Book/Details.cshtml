@@ -1,0 +1,79 @@
+﻿@model DarulAman.Models.tbl_Book
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Detail</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <p class="heading-center" align="center">Book</p>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            tbl_BookCategory.CATEGORY_NAME
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_BookCategory.CATEGORY_NAME)
+        </dd>
+
+        <dt>
+            BOOK_NAME
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BOOK_NAME)
+        </dd>
+
+        <dt>
+            BOOK_AUTHOR
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BOOK_AUTHOR)
+        </dd>
+
+        <dt>
+            BOOK_PICTURE
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BOOK_PICTURE)
+        </dd>
+
+        <dt>
+            BOOK_DETAIL
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BOOK_DETAIL)
+        </dd>
+
+        <dt>
+            BOOK_PDF
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BOOK_PDF)
+        </dd>
+
+    </dl>
+</div>
+<p class="btn btn-outline-info btn-custom btn-lg">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BOOK_ID })
+</p>
+<br />
+<p class="btn btn-custom btn-outline-warning btn-lg">
+    @Html.ActionLink("Back to List", "Index")
+</p>

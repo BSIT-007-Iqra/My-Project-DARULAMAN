@@ -1,0 +1,90 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_Book>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Index</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <p class="heading">Book</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+
+            <a style="float:right;" class="btn btn-outline-info btn-lg" href="@Url.Action("Create", "tbl_Book")"><b>Create New</b> </a>
+        </div>
+
+    </div>
+</div>
+<br />
+<table class="table">
+    <tr>
+        <th>
+         CATEGORY_NAME
+        </th>
+        <th>
+            BOOK_NAME
+        </th>
+        <th>
+            BOOK_AUTHOR
+        </th>
+        <th>
+            BOOK_PICTURE
+        </th>
+        <th>
+            BOOK_DETAIL
+        </th>
+        <th>
+            BOOK_PDF
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbl_BookCategory.CATEGORY_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BOOK_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BOOK_AUTHOR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BOOK_PICTURE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BOOK_DETAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BOOK_PDF)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "tbl_Book", new { id=item.BOOK_ID})">
+                    <i class="fa fa-edit btn btn-success  "></i>
+                </a>|
+                <a href="@Url.Action("Details", "tbl_Book", new { id=item.BOOK_ID})">
+                    <i class="fa fa-book btn btn-warning"></i>
+                </a>|
+                <a href="@Url.Action("Delete", "tbl_Book", new { id=item.BOOK_ID })">
+                    <i class="fa fa-trash btn btn-danger"></i>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

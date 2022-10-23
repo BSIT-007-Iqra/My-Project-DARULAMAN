@@ -1,0 +1,263 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_SchoolCourse>
+@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <br /> 
+                <h3 style="color:#FDBE33">عَنْ أَبِي هُرَيْرَةَ قَالَ قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ مَنْ سَلَكَ طَرِيقًا <br />يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ</h3><br />
+
+                <h4 style="color:#FDBE33">
+                   Abu Huraira reported: The Prophet(ﷺ) said;
+                </h4>
+                <p style="color:white">
+                    “Whoever travels a path in search of knowledge, Allah will make easy for him a path to Paradise.”
+                    <br />( Ṣaḥīḥ Muslim 2699)
+                </p>
+
+            </div>
+            <div class="col-12">
+               <br /><br /> <h2>Islamic School</h2>
+                <a href="@Url.Action("IndexCustomer","Home")">Home</a>
+                <a href="@Url.Action("School","Home")">Islamic School</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!---<div class="single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="single-content">
+                    <div class="carousel-text">
+                        <h2 style=" color: #FDBE33">Hochzeit (Nikkah) </h2><br />
+                        <div class="sidebar">
+                            <div class="sidebar-widget">
+
+                                <div class="text-widget">
+                                    <p style="font-size:x-large;color:black">
+                                        ❖Machen Sie Ehebruch schwer und Nikkah leicht
+                                        <br />
+                                        ❖Organisieren Sie die Hochzeitszeremonien in Masjid.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="comment-form">
+                                <center> <h2 style="color:orange">Leave a comment</h2></center><br />
+                                <form>
+                                    <div class="form-group">
+                                        <label for="name"> First Name *</label>
+                                        <input type="text" class="form-control" id="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name"> Last Name *</label>
+                                        <input type="text" class="form-control" id="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tel#">Tel# *</label>
+                                        <input type="tel" class="form-control" id="tel#">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Gender">Gender *</label>
+                                        <br />
+                                        <div>
+                                            <input type="radio" name="123" id="Gender">Female
+                                            <input type="radio" name="123" id="Gender">Male
+                                            <input type="radio" name="123" id="Gender">Others
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Origin">Origin *</label>
+                                        <input type="text" class="form-control" id="Origin">
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="Address">Address *</label>
+                                        <textarea class="form-control" id="Address" required="required"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="website">Gardian</label>
+                                        <input type="url" class="form-control" id="Gardian">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="reason" placeholder="Chose Course">Reason *</label>
+
+                                        <select class="form-control" id="reason">
+
+                                            <option>Nazra</option>
+                                            <option>Tafseer</option>
+                                            <option>Hifz</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="message">Message *</label>
+                                        <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Post Comment" class="btn btn-custom">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<div class="section-header text-center">
+    <div class="carousel-text">
+        <h2 style=" color: #FDBE33">Hadith </h2>
+        <br /><br />
+        <center>
+            <p>
+                Abu Hurairah:(May Allah be pleased with him) reported:<br />
+                 The Messenger of Allah (ﷺ) said:
+            </p>
+            
+            <p style="color:black;font-size:xx-large">
+                <b>   مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ طَرِيقًا إِلَى الْجَنَّةِ‏</b>
+            </p>
+            <p style="color:black">
+                Whoever takes a path upon which to obtain knowledge, Allah makes the path to Paradise easy for him.<br />
+                  <b>[Jami` at-Tirmidhi 2646].</b>
+            </p>
+        </center>
+    </div><hr />
+</div>
+<!-- Contact End -->
+<div class="single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="single-content">
+                    <div class="carousel-text">
+                        <h2 style=" color: #FDBE33">Moschee (Ein Ort, um Ihren Glauben zu überprüfen) </h2><br />
+                        <div class="sidebar">
+                            <div class="sidebar-widget">
+
+                                <div class="text-widget">
+                                    <p >
+                                        <ul style="font-size:x-large;color:black">
+                                            <li>
+                                                Das Haus Allahs (es ist nicht das  Privateigentum von jemandem)
+                                            </li>
+                                            <li>24 Stunden geöffnet</li>
+                                                  
+                                            <li>
+                                                Ein Ort, der nicht nur ein Gebetsraum
+                                                ist, sondern ein Institut, in dem man
+                                                erfährt, was Allah uns im Koran
+                                                befohlen hat und wie Muhammad
+                                                befolgte dies) صلى هللا عليه وسلم)
+                                                (Sunnah).
+                                            </li>
+                                        </ul>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><hr />
+                
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+
+                <div class="comment-form">
+                    <center> <h2 style="color:orange">Leave a comment</h2></center><br />
+                   
+                        <form action="/Home/School" method="post">
+                            <div class="form-group">
+                                <label for="name"> First Name *</label>
+                                <input type="text" class="form-control" name="FIRST_NAME" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="name"> Last Name *</label>
+                                <input type="text" class="form-control" name="LAST_NAME" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="tel#">Tel# *</label>
+                                <input type="tel" class="form-control" name="CONTACT" id="tel#">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" class="form-control" name="EMAIL" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="id">ID*</label>
+                                <input type="text" class="form-control" name="ID" id="id">
+                            </div>
+                            <div class="form-group">
+                                <label for="Gender">Gender *</label>
+                                <br />
+                                <div>
+                                    <input type="radio" id="female" class="custom-radio" name="GENDER" value="Female">&nbsp;
+                                    <label for="female">Female</label><br>
+                                    <input type="radio" id="male" name="GENDER" class="custom-radio" value="Male">&nbsp;
+                                    <label for="male">Male</label><br>
+                                    <input type="radio" id="others" name="GENDER" class="custom-radio" value="Others">&nbsp;
+                                    <label for="others">Others</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Origin">Origin *</label>
+                                <input type="text" class="form-control" name="ORIGIN" id="Origin">
+                            </div>
+                            <div class="control-group">
+                                <label for="Address">Address *</label>
+                                <textarea class="form-control" id="Address" name="ADDRESS" required="required"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="Gardian">Guardian</label>
+                                <input type="text" class="form-control" name="GUARDIAN" id="Guardian">
+                            </div>
+                            <div class="form-group">
+                                <label for="reason" placeholder="Chose Course">Course *</label>
+
+                                <select class="form-control" name="COURSE" id="reason">
+                                    @foreach (var c in Model)
+                                    {
+                                        <option>@c.COURSE_NAME</option>
+                                    }
+                                </select>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="message">Message </label>
+                                <textarea id="message" cols="30" rows="5" name="MESSAGE" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" required />
+                                <span>
+                                    I Accept the <a href="#" style="color:#FDBE33 " required="required"><b>Terms and Conditions</b></a>
+                                </span>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <input type="submit" value="Submit" class="btn btn-custom btn-block">
+                            </div>
+                        </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

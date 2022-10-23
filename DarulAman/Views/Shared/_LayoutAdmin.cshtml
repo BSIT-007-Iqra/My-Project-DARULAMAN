@@ -1,0 +1,330 @@
+﻿@using DarulAman.Models
+@{
+    Model1 db = new Model1();
+    tbl_Admin a = db.tbl_Admin.FirstOrDefault();
+
+    if (Session["Admin"] == null)
+    {
+        Response.Redirect("/Home/Login");
+    }
+    else
+    {
+        a = (tbl_Admin)Session["Admin"];
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>DarulAman </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- site icon -->
+    <link href="~/Content/Customer/img/Logoicon.ico" rel="icon" type="image/png" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="~/Content/Admin/css/bootstrap.min.css" />
+    <!-- site css -->
+    <link rel="stylesheet" href="~/Content/Admin/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="~/Content/Admin/css/responsive.css" />
+    <!-- color css -->
+    <link rel="stylesheet" href="~/Content/Admin/css/colors.css" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="~/Content/Admin/css/bootstrap-select.css" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="~/Content/Admin/css/perfect-scrollbar.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="~/Content/Admin/css/custom.css" />
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        /******Custom h1*****/
+        .customh1 {
+            margin: 10px 5px 35px 5px;
+            font-size: 40px;
+            text-align: center;
+            font-weight: bold;
+            color: #F7921E;
+        }
+        /******Custom del*****/
+        .customdel {
+            color: dimgray;
+            text-align: center;
+            font-size: 15px
+        }
+        /******Customdt*****/
+        .customdt {
+            color: black;
+            opacity: 0.85;
+            font-size: 18px;
+            padding: 6px 6px 6px 6px;
+        }
+        /******Custom back button*****/
+        .indexback {
+            text-align: center;
+            color: #F7921E;
+            font-weight: bold;
+            border: 1px solid #F7921E;
+            border-radius: 10px 10px;
+            border-radius: 10px 10px;
+            padding: 6px 6px 6px 6px;
+            background-color: transparent;
+            font-size: 18px;
+        }
+        /******Custom button*****/
+        .custombtn {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            border: 1px solid #F7921E;
+            border-radius: 10px 10px;
+            border-radius: 10px 10px;
+            padding: 6px 12px 6px 12px;
+            background-color: #F7921E;
+            font-size: 18px;
+        }
+        /******Custom th*****/
+        .customth {
+            background-color: #F7921E;
+            color: black;
+            opacity: 0.85;
+            font-size: 15px;
+            padding: 6px 6px 6px 6px;
+        }
+        /******Custom dd*****/
+        .customdd {
+            color: black;
+            opacity: 0.85;
+            font-size: 15px;
+            padding: 6px 6px 6px 36rem;
+        }
+        /******Custom paragragh in index*****/
+        .customp1 {
+            text-align: center;
+            color: black;
+            border: 1px solid #F7921E;
+            border-radius: 10px 10px;
+            padding: 6px 6px 6px 6px;
+            background-color: transparent;
+            margin: 10px 5px 10px 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body class="dashboard dashboard_1">
+    <div class="full_container">
+        <div class="inner_container">
+            <nav id="sidebar">
+                <div class="sidebar_blog_1">
+                    <div class="sidebar-header">
+                        <div class="logo_section">
+
+                        </div>
+                    </div>
+                    <div class="sidebar_user_info">
+                        <div class="icon_setting"></div>
+                        <div class="user_profle_side">
+
+                            <div class="user_img"><img class="img-responsive" src="~/Content/Customer/img/Masjid logo-01.png" alt="#" /></div>
+                            <div class="user_info">
+                                <h6>DarulAman</h6>
+                                <p style="color: #F7921E">Admin SideBar</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar_blog_2">
+                    <a href="@Url.Action("IndexCustomer","Home")"><h4>Darul Aman</h4></a>
+                    <ul class="list-unstyled components">
+                        <li class="active">
+                            <a href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+                            <ul class="collapse list-unstyled" id="dashboard">
+                                <li>
+                                    <a href="@Url.Action("IndexAdmin","Home")"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="@Url.Action("Index","tbl_Institute")"><i class="fa fa-industry orange_color"></i> <span>Manage Institute</span></a></li>
+                        <li><a href="@Url.Action("Index","tbl_Slider")"><i class="fa fa-sliders purple_color"></i> <span>Manage Slider</span></a></li>
+                        <li><a href="widgets.html"><i class="fa fa-money blue1_color"></i> <span>Manage Donations</span></a></li>
+                        <li>
+                            <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user red_color"></i> <span>Admins</span></a>
+                            <ul class="collapse list-unstyled" id="element">
+                                <li><a href="@Url.Action("Index","tbl_Admin")">> <span>Manage Admins</span></a></li>
+                                <li><a href="@Url.Action("Index","tbl_AccessLevel")">> <span>Manage Access Level</span></a></li>
+
+                            </ul>
+                        </li>
+
+
+
+
+
+
+                        <li><a href="@Url.Action("GeneralRegistration","AdminSideForm")"><i class="fa fa-wpforms purple_color2"></i> <span>General Registration Form</span></a></li>
+                        <li>
+                            <a href="#element1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-file-text yellow_color"></i> <span>Teaching Quran & Hadith</span></a>
+                            <ul class="collapse list-unstyled" id="element1">
+                                <li><a href="@Url.Action("Index","tbl_TeachingRegistration")"><span>Registrations</span></a></li>
+                                <li><a href="@Url.Action("Index","tbl_TeachingCourse")"><span>Manage Courses</span></a></li>
+
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a href="#element2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-university orange_color"></i> <span>Islamic School</span></a>
+                            <ul class="collapse list-unstyled" id="element2">
+                                <li><a href="@Url.Action("Index","tbl_SchoolRegistration")"><span>Registrations</span></a></li>
+                                <li><a href="@Url.Action("Index","tbl_SchoolCourse")"><span>Manage Courses</span></a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#element3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-life-ring green_color"></i> <span> Funeral</span></a>
+                            <ul class="collapse list-unstyled" id="element3">
+                                <li><a href="@Url.Action("Index","tbl_DeadRelative")"><span>Late Relative</span></a></li>
+                                <li><a href="@Url.Action("Index","tbl_Decreased")"><span>Decreased Person</span></a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="@Url.Action("Index","tbl_Marriage")"><i class="fa fa-diamond purple_color"></i> <span>Marriage Ceremony</span></a></li>
+                        <li>
+                            <a href="#element4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-book blue1_color"></i> <span>Islamic Library</span></a>
+                            <ul class="collapse list-unstyled" id="element4">
+                                <li><a href="@Url.Action("Index","tbl_Book")"><span>Books</span></a></li>
+                                <li><a href="@Url.Action("Index","tbl_BookCategory")"><span>Book Categories</span></a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="@Url.Action("Index","tbl_Event")"><i class="fa fa-calendar red_color"></i> <span>Manage Upcoming Events</span></a></li>
+                        <li><a href="@Url.Action("Index","tbl_Volunteer")"><i class="fa fa-user purple_color2"></i> <span>Manage Volunteers</span></a></li>
+                        <li><a href="@Url.Action("Index","tbl_Team")"><i class="fa fa-user yellow_color"></i> <span>Our Team</span></a></li>
+                        <li><a href="@Url.Action("ContactRegistration","AdminSideForm")"><i class="fa fa-phone green_color"></i> <span>Manage Contact Form</span></a></li>
+                        <li><a href="@Url.Action("Index","tbl_FAQs")"><i class="fa fa-question-circle orange_color"></i> <span>FAQs</span></a></li>
+                        <!--------------------
+
+                                        <li><a href="widgets.html"><i class="fa fa-clock-o orange_color2"></i> <span>Widgets</span></a></li>
+                                        <li>
+                                            <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Elements</span></a>
+                                            <ul class="collapse list-unstyled" id="element">
+                                                <li><a href="general_elements.html">> <span>General Elements</span></a></li>
+                                                <li><a href="media_gallery.html">> <span>Media Gallery</span></a></li>
+                                                <li><a href="icons.html">> <span>Icons</span></a></li>
+                                                <li><a href="invoice.html">> <span>Invoice</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="tables.html"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
+                                        <li>
+                                            <a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Apps</span></a>
+                                            <ul class="collapse list-unstyled" id="apps">
+                                                <li><a href="email.html">> <span>Email</span></a></li>
+                                                <li><a href="calendar.html">> <span>Calendar</span></a></li>
+                                                <li><a href="media_gallery.html">> <span>Media Gallery</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="price.html"><i class="fa fa-briefcase blue1_color"></i> <span>Pricing Tables</span></a></li>
+                                        <li>
+                                            <a href="">
+                                                <i class="fa fa-paper-plane red_color"></i> <span>Contact</span>
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Additional Pages</span></a>
+                                            <ul class="collapse list-unstyled" id="additional_page">
+                                                <li>
+                                                    <a href="profile.html">> <span>Profile</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="project.html">> <span>Projects</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="login.html">> <span>Login</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="404_error.html">> <span>404 Error</span></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
+                                        <li><a href="charts.html"><i class="fa fa-bar-chart-o green_color"></i> <span>Charts</span></a></li>
+                                        <li><a href="settings.html"><i class="fa fa-cog yellow_color"></i> <span>Settings</span></a></li>
+                                   -------------------------------->
+                    </ul>
+                </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+                <!-- topbar -->
+                <!-- topbar -->
+                <div class="topbar">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="full">
+                            <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+
+                            <div class="right_topbar">
+                                <div class="icon_info">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge online_animation">@a.</span></a></li>
+                                        <li><a href="#"><i class="fa fa-question-circle">@System.DateTime.Now.ToLongDateString() @System.DateTime.Now.ToLongTimeString() &nbsp;</i></a></li>
+                                        <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge online_animation">3</span></a></li>
+                                    </ul>
+                                   
+                                    <ul class="user_profile_dd">
+                                        <li>
+                                            <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="~/Content/Admin/images/layout_img/user_img.jpg" alt="#" /><span class="name_user">@a.FIRST_NAME</span><br /><span class="name_user">@a.LAST_NAME</span></a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="profile.html">My Profile</a>
+                                                <a class="dropdown-item" href="settings.html">Settings</a>
+                                                <a class="dropdown-item" href="help.html">Help</a>
+                                                <a class="dropdown-item" href="@Url.Action("logout","Home")"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <!-- end topbar -->              
+                @RenderBody()
+
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="~/Content/Admin/js/jquery.min.js"></script>
+    <script src="~/Content/Admin/js/popper.min.js"></script>
+    <script src="~/Content/Admin/js/bootstrap.min.js"></script>
+    <!-- wow animation -->
+    <script src="~/Content/Admin/js/animate.js"></script>
+    <!-- select country -->
+    <script src="~/Content/Admin/js/bootstrap-select.js"></script>
+    <!-- owl carousel -->
+    <script src="~/Content/Admin/js/owl.carousel.js"></script>
+    <!-- chart js -->
+    <script src="~/Content/Admin/js/Chart.min.js"></script>
+    <script src="~/Content/Admin/js/Chart.bundle.min.js"></script>
+    <script src="~/Content/Admin/js/utils.js"></script>
+    <script src="~/Content/Admin/js/analyser.js"></script>
+    <!-- nice scrollbar -->
+    <script src="~/Content/Admin/js/perfect-scrollbar.min.js"></script>
+    <script>
+        var ps = new PerfectScrollbar('#sidebar');
+    </script>
+    <!-- custom js -->
+    <script src="~/Content/Admin/js/custom.js"></script>
+    <script src="~/Content/Admin/js/chart_custom_style1.js"></script>
+</body>
+</html>

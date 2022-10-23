@@ -1,0 +1,173 @@
+﻿@model DarulAman.Models.tbl_DeadRelative
+
+@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <br /><br />  <br /> <h3 style="color:#FDBE33">﴾كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ ۖ ثُمَّ إِلَيْنَا تُرْجَعُونَ ﴿57</h3><br />
+                <h3 style="color:#FDBE33">
+                    AL  Quran
+                </h3>
+                <p style="color:white">
+                    "Every soul shall taste death. Then you shall be brought back to Us."<br />(Surah Al Ankabut Ayat 57)
+                </p>
+            </div>
+            <div class="col-12">
+                <br /><br /> <h2>Funeral</h2>
+                <a href="@Url.Action("IndexCustomer","Home")">Home</a>
+                <a href="@Url.Action("DeadRelative","Home")">Funeral</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<div class="section-header text-center">
+    <div class="carousel-text">
+        <h2 style=" color: #FDBE33">Hadith </h2>
+        <br /><br />
+        <center>
+            <p>'Uthman bin 'Affan (möge Allah mit ihm zufrieden sein) berichtete:<br />Der Gesandte Allahs (ﷺ) sagte:</p>
+
+            <p style="color:black;font-size:xx-large">
+                <b>   كُلُّ نَفْسٍ ذَآىٕقَةُ الْمَوْتِؕ وَاِنَّمَا تُوَفَّوْنَ اُجُوْرَكُمْ یَوْمَ الْقِیٰمَةِؕ فَمَنْ زُحْزِحَ عَنِ النَّارِ<br /> وَاُدْخِلَ الْجَنَّةَ فَقَدْ فَازَؕ وَمَا الْحَیٰوةُ الدُّنْیَاۤ اِلَّا مَتَاعُ الْغُرُوْرِ</b>
+            </p>
+            <p style="color:black">
+                Every soul will taste death, and you will only be given your [full] compensation on the Day of Resurrection. So he who is drawn away from the Fire and admitted to Paradise has attained [his desire].
+                And what is the life of this world except the enjoyment of delusion..<br />
+                <b>[Al-Bukhari].</b>
+            </p>
+        </center>
+    </div><hr />
+</div>
+<div class="single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="single-content">
+                    <div class="carousel-text">
+                        <h2 style="color: #FDBE33; font-weight: bold ">Bestattung </h2><br />
+                        <div class="sidebar">
+                            <div class="sidebar-widget">
+
+                                <div class="text-widget">
+
+                                    <h4 style="padding: 8px 0 8px 0; font-size: larger; color:darkred;font-weight:bold">Darul Aman wird alle Kosten übernehmen, wenn jemand nicht in der Lage ist zu zahlen.</h4><br />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><hr />
+                    <div class="sidebar-widget">
+                        <h2 class="widget-title"><b></b></h2>
+                        <div class="text-widget">
+                            <p>
+                                <ul style="color:black">
+                                    <li style="padding: 8px 0 8px 0;font-size:larger"> Totenwaschung.</li>
+
+                                    <li style="padding: 8px 0 8px 0; font-size: larger">Islamisches Begräbnisgebet</li>
+                                    <li style="padding: 8px 0 8px 0; font-size: larger ">
+                                        Beerdigung
+                                    </li>
+
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+
+                <div class="comment-form">
+                    <h2>DeadRelative</h2>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                <label for="first_name" style="color:black"> FIRST_NAME *</label>
+                                <input type="text" name="FIRST_NAME" class="form-control" id="first_name" required>
+                                @Html.ValidationMessageFor(model => model.FIRST_NAME, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last_name" style="color:black"> LAST_NAME *</label>
+                            <input type="text" name="LAST_NAME" class="form-control" id="last_name" required>
+                            @Html.ValidationMessageFor(model => model.LAST_NAME, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact" style="color:black">CONTACT *</label>
+                            <input type="tel" name="CONTACT" class="form-control" id="contact" required>
+                            @Html.ValidationMessageFor(model => model.CONTACT, "", new { @class = "text-danger" })
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="email" style="color:black"> EMAIL *</label>
+                            <input type="email" name="EMAIL" class="form-control" id="email" required>
+                            @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="RELATION_WITH_DEAD1" style="color:black"> RELATION_WITH_DEAD *</label>
+                            <input type="text" name="RELATION_WITH_DEAD" class="form-control" id="RELATION_WITH_DEAD1">
+                            @Html.ValidationMessageFor(model => model.RELATION_WITH_DEAD, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ID1" style="color:black">ID *</label>
+                            <input type="text" name="ID" class="form-control" id="ID1" required>
+                            @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label for="DATE_OF_FUNERAL1" style="color:black">DATE_OF_FUNERAL*</label>
+                            <input type="date" name="DATE_OF_FUNERAL" class="form-control" id="DATE_OF_FUNERAL1" required>
+                            @Html.ValidationMessageFor(model => model.DATE_OF_FUNERAL, "", new { @class = "text-danger" })
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="ORIGIN1" style="color:black">ORIGIN*</label>
+                            <input type="text" name="ORIGIN" class="form-control" id="ORIGIN1" required>
+                            @Html.ValidationMessageFor(model => model.ORIGIN, "", new { @class = "text-danger" })
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="MESSAGE1" style="color:black">MESSAGE*</label>
+                            <textarea type="text" name="MESSAGE" class="form-control" id="MESSAGE1"></textarea>
+                            @Html.ValidationMessageFor(model => model.MESSAGE, "", new { @class = "text-danger" })
+                        </div>
+
+                       
+                        <div class="form-group">
+                            <input type="checkbox" required />
+                            <span>
+                                I Accept the <a href="#" style="color:#FDBE33 "><b>Terms and Conditions</b></a>
+                            </span>
+                        </div>
+                         <br />
+                           <div class="form-group">
+                               <input type="submit" value="Submit" class="btn btn-custom btn-block">
+                            </div>
+                         }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

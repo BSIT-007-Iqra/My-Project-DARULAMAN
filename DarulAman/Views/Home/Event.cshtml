@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_Event>
+@using DarulAman.Models
+@{
+    Model1 db = new Model1();
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+<!-- Page Header Start -->
+<div class="page-header-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Upcoming Events</h2>
+            </div>
+            <div class="col-12">
+                <a href="@Url.Action("IndexCustomer","Home")">Home</a>
+                <a href="@Url.Action("Event","Home")">Events</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Event Start -->
+<div class="event">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Upcoming Events</p>
+            <h2> Under Maintenance</h2>
+        </div>
+        @if (Model.Count() > 0)
+        {
+            <div class="row">
+
+                @foreach (var ev in Model)
+                {
+                    <div class="col-lg-6">
+                        <div class="event-item">
+                            <img src="@Url.Content(ev.EVENT_PICTURE)">
+                            <div class="event-content">
+                                <div class="event-meta">
+                                    <p><i class="fa fa-calendar-alt"></i>@DateTime.Parse(ev.EVENT_DATE.ToString()).ToLongDateString()</p>
+                                    <p>Starting Time:<i class="far fa-clock"></i>@DateTime.Parse(ev.TIME_TO.ToString()).ToLongTimeString()</p>
+                                    <p>Ending Time:<i class="far fa-clock"></i>@DateTime.Parse(ev.TIME_FROM.ToString()).ToLongTimeString()</p>
+                                    <p><i class="fa fa-map-marker-alt"></i>@ev.ADDRESS</p>
+                                </div>
+                                <div class="event-text">
+                                    <br /><br /> <h2>@ev.EVENT_NAME</h2>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+        }
+        else
+        {
+
+            <center>
+                <h2><b style="color:#FDBE33">No Event Exist </b></h2>
+            </center>
+
+        }
+    </div>
+</div>

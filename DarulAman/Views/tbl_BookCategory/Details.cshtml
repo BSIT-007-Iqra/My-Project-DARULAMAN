@@ -1,0 +1,39 @@
+﻿@model DarulAman.Models.tbl_BookCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Detail</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <p class="heading-center" align="center">Book Category</p>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            CATEGORY_NAME
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CATEGORY_NAME)
+        </dd>
+
+    </dl>
+</div>
+<p class="btn btn-outline-info btn-custom btn-lg">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CATEGORY_ID })
+    </p>
+<br />
+<p class="btn btn-custom btn-outline-warning btn-lg">
+    @Html.ActionLink("Back to List", "Index")
+</p>

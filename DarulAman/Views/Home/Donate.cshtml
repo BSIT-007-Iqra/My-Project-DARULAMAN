@@ -1,0 +1,81 @@
+﻿
+@{ Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+@Html.Raw(ViewBag.Message)
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <br /> <h3 style="color:#FDBE33"> ‏إِنَّ ٱلْمُصَّدِّقِينَ وَٱلْمُصَّدِّقَـٰتِ وَأَقْرَضُوا۟ ٱللَّهَ قَرْضًا حَسَنًۭا يُضَـٰعَفُ لَهُمْ وَلَهُمْ أَجْرٌۭ كَرِيمٌۭ  <br /></h3>
+                       <br /><h4 style="color:#FDBE33">
+                                 Al Quran
+                </h4>
+                             <p style="color:white">
+                                 "Indeed, the men who practice charity and the women who practice charity and [they who] have loaned Allah a goodly loan – <br />it will be multiplied for them, and they will have a noble reward."<br />[SURAH HADID AYAT 18 ]
+                             </p>
+            </div>
+            <div class="col-12">
+               <br /><br /> <h2>Donate Now</h2>
+                <a href="@Url.Action("IndexCustomer","Home")">Home</a>
+                <a href="@Url.Action("Donate","Home")">Donate</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Donate Start -->
+<div class="container">
+    <div class="donate" data-parallax="scroll" data-image-src="~/Content/Customer/img/donate.jpg">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="donate-content">
+                    <div class="section-header">
+                        <p>Donate Now</p>
+                        <h2> Under Maintenance</h2>
+                    </div>
+                    <div class="donate-text">
+                        <p>
+                           Under Maintenance
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="donate-form">
+                    <form action="/Home/Donate" method="post">
+                        <div class="control-group">
+                            <input type="text" class="form-control" autocomplete="off" name="FIRST_NAME" id="fname" placeholder="First Name" required="required" />
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" autocomplete="off" name="LAST_NAME" id="lname" placeholder="Last Name" required="required" />
+                        </div>
+                        <div class="control-group">
+                            <input type="email" class="form-control" autocomplete="off" name="EMAIL" id="email" placeholder="Email" required="required" />
+                        </div>
+                        <div class="control-group">
+                            <input type="text" class="form-control" autocomplete="off" name="AMOUNT" id="amount" placeholder="Amount" required="required" />
+                        </div>
+                        <div class="control-group">
+                            <p class="color-word">Payment *</p>
+                            <div>
+
+                                <input type="radio" id="credit" class="custom-radio2 " name="Gender" value="Credit" checked>&nbsp;
+                                <label for="credit" class="color-word">Credit</label><br>
+                                <input type="radio" id="debit" name="Gender" class="custom-radio2" value="Debit">&nbsp;
+                                <label for="debit" class="color-word">Debit</label><br>
+                                <input type="radio" id="paypal" name="Gender" class="custom-radio2" value="Paypal">&nbsp;
+                                <label for="paypal" class="color-word">Paypal</label>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-custom" type="submit">Donate Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Donate End -->

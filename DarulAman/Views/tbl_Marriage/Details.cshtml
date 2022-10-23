@@ -1,0 +1,113 @@
+﻿@model DarulAman.Models.tbl_Marriage
+
+@{
+    Layout = "~/Views/Shared/_MarriageLayout.cshtml";
+    ViewBag.Title = "Details";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Detail</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <p class="heading-center" align="center">Marriage Registration</p>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            FIRST_NAME
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FIRST_NAME)
+        </dd>
+
+        <dt>
+            LAST_NAME
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LAST_NAME)
+        </dd>
+
+        <dt>
+            CONTACT
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONTACT)
+        </dd>
+
+        <dt>
+            EMAIL
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            ID
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+
+        <dt>
+            DATE_OF_MARRIAGE
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_OF_MARRIAGE)
+        </dd>
+
+        <dt>
+            ORIGIN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORIGIN)
+        </dd>
+
+        <dt>
+            MESSAGE
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MESSAGE)
+        </dd>
+
+        <dt>
+            DATE
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE)
+        </dd>
+
+        <dt>
+            STATUS
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+<p class="btn btn-outline-info btn-custom btn-lg">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MARRIAGE_ID})
+</p>
+<br />
+<p class="btn btn-custom btn-outline-warning btn-lg">
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

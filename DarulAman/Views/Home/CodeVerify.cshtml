@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Login</h2>
+            </div>
+            <div class="col-12">
+                <a href="@Url.Action("IndexCustomer","Home")">Home</a>
+                <a href="@Url.Action("CodeVerify","Home")">CodeVerify</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+    <!---Code Verification Form-->
+<div class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+
+                <div class="form2">
+                    <center>
+                        <h1 style="color: #FDBE33;"><b>Verify Code</b></h1>
+                        <p>Please fill in data</p>
+                        <hr>
+                        <form name="form" id="form" action="/Home/CodeVerify" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="Form-word "><b>Enter code *</b></label>
+                                <input type="text" name="code" id="inputEmail" placeholder="Enter Email" required />
+                            </div>
+
+                            <input type="submit" class="btn btn-custom btn-lg" value="Submit" />
+                            <br /><br />
+                        </form>
+                    </center>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_BookCategory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Index</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <p class="heading">Book Category</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+
+            <a style="float:right;" class="btn btn-outline-info btn-lg" href="@Url.Action("Create","tbl_BookCategory")"><b>Create New</b> </a>
+        </div>
+
+    </div>
+</div>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            CATEGORY_NAME
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CATEGORY_NAME)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "tbl_BookCatetgory", new { id=item.CATEGORY_ID})">
+                    <i class="fa fa-edit btn btn-success  "></i>
+                </a>|
+                <a href="@Url.Action("Details", "tbl_BookCatetgory", new { id=item.CATEGORY_ID })">
+                    <i class="fa fa-book btn btn-warning"></i>
+                </a>|
+                <a href="@Url.Action("Delete", "tbl_BookCatetgory", new { id=item.CATEGORY_ID })">
+                    <i class="fa fa-trash btn btn-danger"></i>
+                </a>
+
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,141 @@
+﻿@model IEnumerable<DarulAman.Models.tbl_Marriage>
+
+    @{
+        Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+    }
+    <!-- Page Header Start -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                   <br /> <h4 style="color:#FDBE33">
+                        The Prophet(ﷺ) said;
+                    </h4><br />
+                    <h3 style="color:#FDBE33">لنِّكَاحُ مِنْ سُنَّتِي فَمَنْ لَمْ يَعْمَلْ بِسُنَّتِي فَلَيْسَ مِنِّي وَتَزَوَّجُوا فَإِنِّي مُكَاثِرٌ بِكُمُ الأُمَمَ</h3><br />
+                   <p style="color:white">
+                   “Marriage is part of my sunnah, and whoever does not follow my sunnah has nothing to do with me. <br />Get married, for I am heartened by your great numbers before the nations (of other Prophets).”<br />(Sunan Ibn Majah)
+                    </p>
+                </div>
+                <div class="col-12">
+                    <br /><h2>Marriage</h2>
+                    <a href="@Url.Action("IndexCustomer","Home")">Home</a>
+                    <a href="@Url.Action(" Marriage","Home")">Marriage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+    <div class="section-header text-center">
+        <div class="carousel-text">
+            <h2 style=" color: #FDBE33">Quotation From Quran </h2>
+            <br /><br />
+            <center>
+                <p style="color:black;font-size:xx-large">
+                    <b>   وَأَنكِحُوا۟ ٱلْأَيَـٰمَىٰ مِنكُمْ وَٱلصَّـٰلِحِينَ مِنْ عِبَادِكُمْ وَإِمَآئِكُمْ ۚ إِن يَكُونُوا۟ فُقَرَآءَ يُغْنِهِمُ ٱللَّهُ مِن فَضْلِهِۦ ۗ وَٱللَّهُ وَٰسِعٌ عَلِيمٌۭ ٣٢</b>
+                </p>
+                <p style="color:black">
+                    And marry the unmarried among you and the righteous among your male slaves and female slaves. If they should be poor, Allah will enrich them from His bounty, and Allah is all-Encompassing and Knowing.<br />
+                    <b>(Quran 24:32)</b>
+                </p>
+            </center>
+        </div><hr />
+    </div>
+    <div class="single">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="single-content">
+                        <div class="carousel-text">
+                            <h2 style=" color: #FDBE33">Hochzeit (Nikkah) </h2><br />
+                            <div class="sidebar">
+                                <div class="sidebar-widget">
+
+                                    <div class="text-widget">
+                                        <p>
+                                            <ul style="font-size:x-large;color:black">
+                                                <li>Machen Sie Ehebruch schwer und Nikkah leicht</li>
+                                                <li>Organisieren Sie die Hochzeitszeremonien in Masjid.</li>
+                                            </ul>
+
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><hr />
+                        <div class="sidebar-widget">
+                            <h2 class="widget-title"><b></b></h2>
+                            <div class="text-widget">
+                                <p>
+                                    <ul style="color:black">
+                                        <li> Our Mosque provides Marriage facility but the following<u style="color: #FDBE33"><b> Requirements</b></u> must be fulfilled...</li>
+
+                                        <li> We We need a valid License and  a valid Germany <br /><u>State Certificate of  Marriage</u></li>
+
+                                        <li>Two witness’s from the groom’s side and one witness from the bride.</li>
+                                        <li>You need valid Identification card and mahr(bride gift) should be a  mutual understanding between the bride and groom.</li>
+                                        <li>Darul Aman Mosque is not providing witnesses.</li>
+                                        <li>The fee to perform Nikah ( Marriage Ceremony) is $350.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+
+                    <div class="comment-form">
+                        <h2>Enter Information</h2>
+                       
+                            <form action="/Home/Marriage" method="post">
+                                <div class="form-group">
+                                    <label for="name"> First Name *</label>
+                                    <input type="text" class="form-control" name="FIRST_NAME" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name"> Last Name *</label>
+                                    <input type="text" class="form-control" name="LAST_NAME" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tel">Tel# *</label>
+                                    <input type="tel" class="form-control" name="CONTACT" id="tel">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" class="form-control" name="EMAIL" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="id">ID *</label>
+                                    <input type="text" class="form-control" name="ID" id="id">
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Date of Marriage *</label>
+                                    <input type="date" class="form-control" name="DATE" id="date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Origin">Origin *</label>
+                                    <input type="text" class="form-control" name="ORIGIN" id="Origin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message </label>
+                                    <textarea id="message" cols="30" rows="5" name="MESSAGE" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" required />
+                                    <span>
+                                        I Accept the <a href="#" style="color:#FDBE33 " required="required"><b>Terms and Conditions</b></a>
+                                    </span>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <input type="submit" value="Submit" class="btn btn-custom btn-block">
+                                </div>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
